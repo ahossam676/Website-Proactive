@@ -1,4 +1,0 @@
-Type: CNAME
-Name: www
-Target: ahossam676.github.io
-TTL: 3600
