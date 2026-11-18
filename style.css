@@ -1,5 +1,5 @@
 /*==========================================================
-  ProActive Services — Balanced & Centered Enterprise UI
+  ProActive Services — Final Clean UI
   Colors: Navy (#00008b), Red (#ED0303)
   Font: Oswald
 ==========================================================*/
@@ -30,37 +30,11 @@ img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
-/* الحاوية المركزية لضبط التناسق في نص الشاشة */
 .container {
   width: 100%;
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 30px;
-}
-
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 11px 24px;
-  border-radius: 8px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 600;
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.2s var(--ease-spring);
-}
-.btn-primary {
-  background: var(--red-accent);
-  color: var(--white);
-  box-shadow: 0 4px 0 var(--red-dark);
-}
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 7px 0 var(--red-dark);
 }
 
 /* Preloader */
@@ -93,7 +67,7 @@ ul { list-style: none; }
   50% { transform: translateY(-16px) rotate(8deg); }
 }
 
-/* Header المتناسق */
+/* Header المتناسق (بدون Get In Touch) */
 #header {
   position: fixed;
   top: 0; left: 0; width: 100%;
@@ -121,7 +95,6 @@ ul { list-style: none; }
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   color: var(--white);
-  letter-spacing: 0.5px;
 }
 .logo img {
   height: 62px;
@@ -166,14 +139,14 @@ ul { list-style: none; }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 .menu-toggle { display: none; color: var(--white); font-size: 24px; cursor: pointer; }
 
-/* Hero - شاشة كاملة متناسقة بدون سكرول */
+/* Hero Section */
 .hero {
   position: relative;
   height: 100vh;
   min-height: 600px;
   display: flex;
   align-items: center;
-  padding-top: 88px; /* نفس ارتفاع الهيدر بالظبط */
+  padding-top: 88px;
   background: #030620;
   overflow: hidden;
 }
@@ -230,7 +203,7 @@ ul { list-style: none; }
   max-width: 490px;
 }
 
-/* Social Dock */
+/* Social Dock (بدون زرار Contact Us الأحمر) */
 .hero-social-dock {
   display: flex;
   gap: 14px;
@@ -240,11 +213,11 @@ ul { list-style: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
   color: var(--white);
-  font-size: 19px;
+  font-size: 20px;
   transition: all 0.25s var(--ease-spring);
   box-shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
 }
@@ -253,11 +226,66 @@ ul { list-style: none; }
 .social-icon-btn.linkedin { background: #0A66C2; box-shadow: 0 4px 0 #044181; }
 .social-icon-btn:hover { transform: translateY(-4px); filter: brightness(1.1); }
 
-/* Quick Cards المتناسقة */
+/* Quick Cards الواضحة والبارزة */
 .hero-quick-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
 }
 .quick-card {
-  background: rgba(255, 25
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 16px;
+  padding: 36px 24px;
+  text-align: center;
+  border-top: 6px solid #00008b;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.quick-card.training { border-top-color: #ED0303; }
+.quick-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.5);
+}
+.quick-card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: rgba(0, 0, 139, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.quick-card.training .quick-card-icon {
+  background: rgba(237, 3, 3, 0.08);
+}
+.quick-card i { font-size: 28px; color: #00008b; }
+.quick-card.training i { color: #ED0303; }
+.quick-card h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 21px;
+  color: #00008b;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.quick-card.training h3 { color: #ED0303; }
+.quick-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+@media (max-width: 960px) {
+  .header-slogan { display: none; }
+  .nav-links { display: none; }
+  .menu-toggle { display: flex; }
+  .hero { height: auto; min-height: 100vh; padding: 130px 0 60px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+  .hero-content p { margin: 0 auto 28px; }
+  .hero-social-dock { justify-content: center; }
+}
