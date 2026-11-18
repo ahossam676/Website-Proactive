@@ -1,5 +1,5 @@
 /*==========================================================
-  ProActive Services — One-Screen Hero & Social Dock
+  ProActive Services — Clean & Professional One-Screen UI
   Colors: Navy (#00008b), Red (#ED0303)
   Font: Oswald
 ==========================================================*/
@@ -8,31 +8,26 @@
 
 :root {
   --navy: #00008b;
-  --navy-deep: #040926;
+  --navy-deep: #020418;
   --red-accent: #ED0303;
   --red-dark: #A80D0D;
   --surface: #F8FAFC;
-  --surface-alt: #EFF4FA;
   --white: #FFFFFF;
   --text: #0F172A;
-  --text-muted: #475569;
-  --text-on-dark-muted: #CBD5E1;
+  --text-muted: #64748b;
+  --text-on-dark-muted: #E2E8F0;
   --border: #E2E8F0;
-  --border-dark: rgba(255, 255, 255, 0.14);
-  --flat-3d-shadow: 0 10px 0 rgba(0, 0, 139, 0.07), 0 20px 30px rgba(0, 0, 139, 0.06);
-  --flat-3d-hover: 0 16px 0 rgba(0, 0, 139, 0.12), 0 26px 40px rgba(0, 0, 139, 0.12);
+  --border-dark: rgba(255, 255, 255, 0.15);
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
-  --font-logo: 'Oswald', sans-serif;
-  --font-body: 'Raleway', sans-serif;
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: var(--font-body);
+  font-family: 'Raleway', sans-serif;
   color: var(--text);
   background: var(--surface);
   line-height: 1.65;
@@ -43,31 +38,15 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 button { font-family: inherit; border: none; background: none; cursor: pointer; }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-logo);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-  color: var(--navy);
-  text-transform: uppercase;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
 /* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 13px 28px;
+  padding: 12px 26px;
   border-radius: var(--radius-sm);
-  font-family: var(--font-logo);
+  font-family: 'Oswald', sans-serif;
   font-weight: 600;
   font-size: 15px;
   text-transform: uppercase;
@@ -119,7 +98,7 @@ h1, h2, h3, h4 {
   position: fixed;
   top: 0; left: 0; width: 100%;
   z-index: 999;
-  background: rgba(4, 9, 38, 0.95);
+  background: #00008b; /* اللون المطلوب للهيدر */
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-dark);
 }
@@ -127,27 +106,45 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 86px;
+  height: 90px;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 .logo {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 24px;
-  font-family: var(--font-logo);
+  font-size: 26px;
+  font-family: 'Oswald', sans-serif;
   font-weight: 700;
   color: var(--white);
-  height: 100%;
 }
 .logo img {
-  height: 58px;
+  height: 65px; /* تكبير اللوجو شوية */
   width: auto;
   object-fit: contain;
   border-radius: 6px;
 }
-.nav-links { display: flex; gap: 30px; }
+.header-slogan {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #38BDF8;
+  text-transform: uppercase;
+  border-left: 1px solid rgba(255,255,255,0.3);
+  padding-left: 12px;
+  display: none;
+}
+@media (min-width: 1024px) {
+  .header-slogan { display: block; }
+}
+
+.nav-links { display: flex; gap: 26px; }
 .nav-links a {
-  font-family: var(--font-logo);
+  font-family: 'Oswald', sans-serif;
   font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
@@ -165,40 +162,40 @@ h1, h2, h3, h4 {
 }
 .nav-links a:hover, .nav-links a.active { color: var(--white); }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-.nav-actions { display: flex; align-items: center; gap: 20px; }
+
+.nav-actions { display: flex; align-items: center; gap: 16px; }
 .menu-toggle { display: none; color: var(--white); font-size: 22px; cursor: pointer; }
 
-/* Hero - One Screen View (بدون سكرول) */
+/* Hero - One Screen View (خلفية أهدى وأوضح) */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 100px 0 40px;
-  background: var(--navy-deep);
+  padding: 110px 0 40px;
+  background: #020418;
   overflow: hidden;
 }
 .hero-bg {
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(circle at 85% 20%, rgba(237, 3, 3, 0.15), transparent 60%),
-    radial-gradient(circle at 15% 85%, rgba(0, 0, 139, 0.4), transparent 70%),
+    linear-gradient(135deg, rgba(2, 4, 24, 0.88) 0%, rgba(0, 0, 139, 0.75) 100%),
     url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop') center/cover no-repeat;
   z-index: 0;
-  opacity: 0.85;
+  opacity: 0.45; /* خلفية هادية جداً وغير مزعجة عشان الكلام يبان واضح */
 }
 .hero-grid {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 40px;
   align-items: center;
 }
 .hero-content h1 {
   font-family: 'Oswald', sans-serif;
-  font-size: clamp(32px, 4.2vw, 52px);
+  font-size: clamp(32px, 4vw, 50px);
   color: var(--white);
   margin-bottom: 16px;
   line-height: 1.15;
@@ -212,6 +209,7 @@ h1, h2, h3, h4 {
   font-size: 15px;
   margin-bottom: 24px;
   max-width: 500px;
+  font-weight: 500;
 }
 
 /* Social Dock */
@@ -225,74 +223,51 @@ h1, h2, h3, h4 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
   color: var(--white);
-  font-size: 20px;
+  font-size: 19px;
   transition: all 0.25s var(--ease-spring);
   box-shadow: 0 4px 0 rgba(0,0,0,0.3);
 }
-.social-icon-btn.whatsapp {
-  background: #25D366;
-  box-shadow: 0 4px 0 #128C7E;
-}
-.social-icon-btn.facebook {
-  background: #1877F2;
-  box-shadow: 0 4px 0 #0C5dc7;
-}
-.social-icon-btn.linkedin {
-  background: #0A66C2;
-  box-shadow: 0 4px 0 #044181;
-}
-.social-icon-btn:hover {
-  transform: translateY(-4px);
-  filter: brightness(1.1);
-}
+.social-icon-btn.whatsapp { background: #25D366; box-shadow: 0 4px 0 #128C7E; }
+.social-icon-btn.facebook { background: #1877F2; box-shadow: 0 4px 0 #0C5dc7; }
+.social-icon-btn.linkedin { background: #0A66C2; box-shadow: 0 4px 0 #044181; }
+.social-icon-btn:hover { transform: translateY(-4px); filter: brightness(1.1); }
 
 /* Quick Cards */
 .hero-quick-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 18px;
 }
 .quick-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   border-radius: 16px;
-  padding: 24px 20px;
+  padding: 28px 22px;
   text-align: center;
-  border-top: 5px solid var(--navy);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  border-top: 5px solid #00008b;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
   transition: transform 0.3s ease;
   display: block;
 }
-.quick-card.training {
-  border-top-color: var(--red-accent);
-}
-.quick-card:hover {
-  transform: translateY(-5px);
-}
-.quick-card i {
-  font-size: 28px;
-  color: var(--navy);
-  margin-bottom: 12px;
-}
-.quick-card.training i {
-  color: var(--red-accent);
-}
+.quick-card.training { border-top-color: #ED0303; }
+.quick-card:hover { transform: translateY(-5px); }
+.quick-card i { font-size: 32px; color: #00008b; margin-bottom: 12px; }
+.quick-card.training i { color: #ED0303; }
 .quick-card h3 {
   font-family: 'Oswald', sans-serif;
-  font-size: 18px;
-  color: var(--navy);
+  font-size: 19px;
+  color: #00008b;
   margin-bottom: 6px;
 }
-.quick-card.training h3 {
-  color: var(--red-accent);
-}
+.quick-card.training h3 { color: #ED0303; }
 .quick-card p {
-  font-size: 12px;
+  font-size: 12.5px;
   color: var(--text-muted);
   margin: 0;
+  font-weight: 600;
 }
 
 @media (max-width: 900px) {
