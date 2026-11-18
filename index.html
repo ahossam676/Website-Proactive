@@ -5,103 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProActive Services | Enterprise IT Solutions & IT Training</title>
+    <meta name="description" content="ProActive Services delivers enterprise IT infrastructure, managed cybersecurity, and elite IT career training in Egypt.">
+
     <link rel="icon" href="Picture1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=5">
-    
-    <style>
-        /* تنسيق مباشر لضمان إخفاء أي أزرار حمراء وإظهار الكروت بوضوح تام */
-        .hero-social-dock .btn-primary,
-        .nav-actions .btn-primary {
-            display: none !important;
-        }
-
-        .hero-quick-cards {
-            display: grid !important;
-            grid-template-columns: 1fr 1fr !important;
-            gap: 24px !important;
-        }
-
-        .quick-card {
-            background: #FFFFFF !important;
-            border-radius: 18px !important;
-            padding: 36px 24px !important;
-            text-align: center !important;
-            border-top: 6px solid #00008b !important;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45) !important;
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            transition: transform 0.3s ease !important;
-            text-decoration: none !important;
-        }
-
-        .quick-card.training {
-            border-top-color: #ED0303 !important;
-        }
-
-        .quick-card:hover {
-            transform: translateY(-8px) !important;
-        }
-
-        .quick-card-icon {
-            width: 68px !important;
-            height: 68px !important;
-            border-radius: 16px !important;
-            background: rgba(0, 0, 139, 0.1) !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            margin-bottom: 16px !important;
-        }
-
-        .quick-card.training .quick-card-icon {
-            background: rgba(237, 3, 3, 0.1) !important;
-        }
-
-        .quick-card-icon i {
-            font-size: 30px !important;
-            color: #00008b !important;
-        }
-
-        .quick-card.training .quick-card-icon i {
-            color: #ED0303 !important;
-        }
-
-        .quick-card h3 {
-            font-family: 'Oswald', sans-serif !important;
-            font-size: 22px !important;
-            color: #00008b !important;
-            margin-bottom: 8px !important;
-            text-transform: uppercase !important;
-        }
-
-        .quick-card.training h3 {
-            color: #ED0303 !important;
-        }
-
-        .quick-card p {
-            font-family: 'Raleway', sans-serif !important;
-            font-size: 13.5px !important;
-            color: #475569 !important;
-            line-height: 1.5 !important;
-            font-weight: 600 !important;
-            margin: 0 !important;
-        }
-
-        @media (max-width: 768px) {
-            .hero-quick-cards {
-                grid-template-columns: 1fr !important;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<div class="preloader">
+    <img src="Picture1.png" alt="ProActive Logo" style="height: 56px; width: auto; margin-bottom: 10px;">
+    <div class="flat-3d-loader"></div>
+    <span style="color: #FFFFFF; font-family: 'Oswald', sans-serif; letter-spacing: 2px; font-size: 13px; margin-top: 8px;">INITIALIZING SYSTEM...</span>
+</div>
 
 <header id="header">
     <nav class="navbar">
@@ -130,7 +51,7 @@
 <section class="hero">
     <div class="hero-bg"></div>
     <div class="container hero-grid">
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-right">
             <span class="tag">
                 <i class="fas fa-microchip"></i> Enterprise IT Solutions
             </span>
@@ -142,7 +63,6 @@
                 Architecting resilient IT infrastructures, multi-tier security, and delivering hands-on IT career training programs across Egypt.
             </p>
             
-            <!-- أيقونات التواصل الاجتماعي فقط (واتساب - فيسبوك - لينكد إن) -->
             <div class="hero-social-dock">
                 <a href="https://wa.me/201148920676" target="_blank" class="social-icon-btn whatsapp" title="Chat on WhatsApp">
                     <i class="fab fa-whatsapp"></i>
@@ -153,11 +73,13 @@
                 <a href="https://www.linkedin.com/company/83068062/admin/dashboard/" target="_blank" class="social-icon-btn linkedin" title="Visit LinkedIn Company Page">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
+                <a href="contact.html" class="btn btn-primary">
+                    Contact Us
+                </a>
             </div>
         </div>
 
-        <!-- كارتين التوجيه البارزين بخلفيتهم البيضاء وأيقوناتهم الواضحة -->
-        <div class="hero-quick-cards">
+        <div class="hero-quick-cards" data-aos="fade-left">
             <a href="services.html" class="quick-card it">
                 <div class="quick-card-icon">
                     <i class="fas fa-server"></i>
@@ -177,5 +99,14 @@
     </div>
 </section>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 900, once: true });
+
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    if (preloader) { preloader.classList.add('hidden'); setTimeout(() => preloader.remove(), 350); }
+});
+</script>
 </body>
 </html>
