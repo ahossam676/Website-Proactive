@@ -634,3 +634,112 @@ h1, h2, h3, h4 {
   .stats .container, .footer-grid { grid-template-columns: 1fr !important; }
   .hero-buttons { flex-direction: column; }
 }
+/*==========================================================
+  ProActive Services — Dual Action Hub (IT Services vs Training)
+==========================================================*/
+.dual-hub-section {
+  padding: 80px 0;
+  background: var(--surface-alt);
+}
+.dual-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+}
+.hub-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 45px 40px;
+  box-shadow: var(--flat-3d-shadow);
+  border: 2px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s var(--ease-spring);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hub-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--flat-3d-hover);
+}
+/* كارت خدمات الـ IT باللون الكحلي الرسمي */
+.hub-card.it-service {
+  border-top: 6px solid #00008b;
+}
+/* كارت التدريب باللون الأحمر الرسمي */
+.hub-card.training-service {
+  border-top: 6px solid #ED0303;
+}
+.hub-icon-box {
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--white);
+  margin-bottom: 25px;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.15);
+}
+.it-service .hub-icon-box {
+  background: #00008b;
+  box-shadow: 0 6px 0 #000044;
+}
+.training-service .hub-icon-box {
+  background: #ED0303;
+  box-shadow: 0 6px 0 #A80D0D;
+}
+.hub-card h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 26px;
+  margin-bottom: 14px;
+  color: #00008b;
+}
+.hub-card p {
+  color: var(--text-muted);
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+.hub-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+.hub-btn.it-btn {
+  background: #00008b;
+  color: var(--white);
+  box-shadow: 0 4px 0 #000044;
+}
+.hub-btn.it-btn:hover {
+  background: #07124A;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #000044;
+}
+.hub-btn.training-btn {
+  background: #ED0303;
+  color: var(--white);
+  box-shadow: 0 4px 0 #A80D0D;
+}
+.hub-btn.training-btn:hover {
+  background: #ff1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #A80D0D;
+}
+
+@media (max-width: 900px) {
+  .dual-hub-grid { grid-template-columns: 1fr; }
+}
