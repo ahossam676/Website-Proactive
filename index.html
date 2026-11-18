@@ -93,6 +93,11 @@
                     </div>
                     <div class="flat-progress"><div class="flat-progress-bar" style="width: 100%;"></div></div>
                 </div>
+                <!-- صورة مصغرة حقيقية داخل الكارت -->
+                <div class="hero-card-preview">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1000&auto=format&fit=crop" alt="Data Center Rack">
+                    <span>Active Infrastructure Lab</span>
+                </div>
             </div>
         </div>
     </div>
@@ -119,10 +124,56 @@
     </div>
 </section>
 
+<!-- Visual Showcase Section (New Section with Images) -->
+<section class="section-padding" style="background: var(--surface);">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <span>Core Expertise</span>
+            <h2>Enterprise Infrastructure & Training Labs</h2>
+            <p>High-performance system architecture and practical hands-on environments designed for maximum reliability.</p>
+        </div>
+
+        <div class="visual-grid">
+            <div class="visual-card" data-aos="fade-up">
+                <div class="visual-card-img">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="Data Center Infrastructure">
+                    <span class="visual-badge">Infrastructure</span>
+                </div>
+                <div class="visual-card-body">
+                    <h3>Data Centers & Networks</h3>
+                    <p>Designing and deploying robust server racks, enterprise switches, and multi-tier network topologies.</p>
+                </div>
+            </div>
+
+            <div class="visual-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="visual-card-img">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop" alt="Cybersecurity Firewall">
+                    <span class="visual-badge">Security</span>
+                </div>
+                <div class="visual-card-body">
+                    <h3>Cybersecurity & Firewalls</h3>
+                    <p>Advanced perimeter security, VPN tunnels, and threat mitigation via Sophos and FortiGate firewalls.</p>
+                </div>
+            </div>
+
+            <div class="visual-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="visual-card-img">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000&auto=format&fit=crop" alt="IT Career Training">
+                    <span class="visual-badge">Training</span>
+                </div>
+                <div class="visual-card-body">
+                    <h3>Hands-On IT Career Labs</h3>
+                    <p>Intensive practical workshops empowering engineers with real-world administrative and troubleshooting skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="section-padding" style="background: var(--surface-alt);">
     <div class="container about-grid">
         <div class="flat-showcase-plate" data-aos="fade-right" data-tilt>
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="Enterprise Datacenter" onerror="this.src='Picture1.png'">
+            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1000&auto=format&fit=crop" alt="Enterprise Datacenter">
             <div class="flat-chip-badge">
                 <i class="fas fa-check-circle" style="color: var(--red-accent); font-size: 22px;"></i>
                 <div>
@@ -257,7 +308,6 @@ window.addEventListener('load', () => {
 document.getElementById('google-sheet-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const formData = new FormData(this);
-    // Replace URL below with your Google Apps Script Web App URL
     const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL'; 
     
     fetch(scriptURL, { method: 'POST', body: formData })
